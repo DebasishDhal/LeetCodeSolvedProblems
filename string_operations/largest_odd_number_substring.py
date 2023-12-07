@@ -23,20 +23,30 @@ Output: "35427"
 Explanation: "35427" is already an odd number.
 """
 
+#Thought process - Get the odd number located at the lowest significant place (2567834 => 3), then simply take all the digits before it and form an odd number. No need of itertools
+
 class Solution:
-  def largestOddNumber(self, num: str) -> str:
-      from itertools import combinations
-      
-      listofnums = [int(i) for i in list(num)]
-      # print(listofnums)
+    def largestOddNumber(self, num: str) -> str:
 
-      if all([i%2==0 for i in listofnums]):
-          return "" #Input - 1406, Output - ""
+        if int(num[-1])%2 != 0:
+            return str(num)
 
-      digits_str = str(num)
-      possible_numbers = [digits_str[x:y] for x, y in combinations(range(len(digits_str) + 1), r = 2)]
-      possible_numbers = [int(x) for x in possible_numbers if int(x)%2 != 0]
-      return str(max(possible_numbers)) #Input - 12346, Output - "123"
+        listofnums = [int(i) for i in list(num)]
+        if all([i%2==0 for i in listofnums]):
+            return ""
+
+        
+        pos = 1
+        while True:
+            digit = listofnums[-pos]
+            if digit%2 != 0:
+                break;
+            else:
+                pos = pos+1
+
+        subnumber = num[0:-pos+1]
+        return subnumber
+        # return str(max(possible_numbers))
 
 if __name__ == '__main__':
   Solution.largestOddNumber(1234797234)
