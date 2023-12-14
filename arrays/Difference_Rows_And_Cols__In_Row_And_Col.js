@@ -16,8 +16,8 @@ Return the difference matrix diff.
  */
 var onesMinusZeros = function(grid) {
 
-    len = grid.length
-    wid = grid[0].length
+    const len = grid.length
+    const wid = grid[0].length
 
     let rows = Array(len).fill(0)
     let cols = Array(wid).fill(0)
