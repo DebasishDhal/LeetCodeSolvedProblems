@@ -1,5 +1,6 @@
 '''
 Beats 69% of users in runtime.
+This thing doesn't work in Python 2. If you print this dictionary in Python 2, the ordering of items would be different. Hence, it won't work.
 '''
 
 class Solution:
