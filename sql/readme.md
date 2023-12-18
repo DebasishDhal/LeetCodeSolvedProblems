@@ -1,1 +1,1 @@
-
+- Checking if content col has more than 15 chars: - df[df['content'].str.len()>15], this function is more efficient than df[df['content'].apply(len)>15], likely because apply method doesn't take advantage of vectorization.
