@@ -1,4 +1,4 @@
-/*Table: Transactions
+/*Table: Transactions 
 +---------------+---------+
 | Column Name   | Type    |
 +---------------+---------+
