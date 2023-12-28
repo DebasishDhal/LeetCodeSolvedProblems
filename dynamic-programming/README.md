@@ -1,4 +1,6 @@
-It's hard to express how much I hate dynamic programming, especially that notation ```dp```
+It's hard to express how much I hate dynamic programming, especially that notation ```dp```. I can't call it garbage, because it solves so many problems. It just takes time to adopt it.
+
+_To understand dynamic programming, you'll require dynamic programming._
 
 I created a very nice solution to a daily problem (hard). It goes like this. Question [Link](https://leetcode.com/problems/string-compression-ii/?envType=daily-question&envId=2023-12-28). It worked for 66 test cases. But it was my mistake, I forgot that ```aaabaaccc``` is compressed as ```a3ba2c3```, and not as ```a5bc3```. Then, I looked at the hint, it said **USE DYNAMIC PROGRAMING**. I'm keeping this code, as a sort of memory 🥲.
 ```
