@@ -7,3 +7,11 @@
 - Try to avoid ```COUNT(*)```. Instead use ```COUNT(DISTINCT(column_name))```, ```COUNT(column_name)``` or whatever seems suitable. This is to improve the speed of execution.
 
 - You cannot have gap after ```COUNT``` just for the sake of aesthetics. ```COUNT(DISTINCT player_id)``` is right, while ```COUNT (DISTINCT player_id```) is wrong.
+
+- ```
+  df = df1.merge(df2, left_on = 'df1_table_col', right_on = 'right_table_col',
+  suffixes = ('_df1cols','_df2cols'))
+  ```
+  This does a join beftween ```df1``` and ```df2``` using ```df1_table_col``` of df1 and ```df2_table_col``` of df2. The left and right suffix inside suffixes gets appended to columns of df1 and df2 respectively.
+  
+- If you need 38.5 to rounded to 39 always, use this trick. ```df['col'] = (df['col'] + 1e-12).round(0)```. A simple ```round(0)```, rounds it to 38.
