@@ -15,3 +15,5 @@
   This does a join beftween ```df1``` and ```df2``` using ```df1_table_col``` of df1 and ```df2_table_col``` of df2. The left and right suffix inside suffixes gets appended to columns of df1 and df2 respectively.
   
 - If you need 38.5 to rounded to 39 always, use this trick. ```df['col'] = (df['col'] + 1e-12).round(0)```. A simple ```round(0)```, rounds it to 38.
+
+- ```SELECT * ``` is way faster than ```SELECT col1,col2,col_last```. Also, better use ```IF(condition, 'True_Case', 'False_Case')``` instead of ```CASE WHEN condition THEN 'True_Case' ELSE 'False_Case' END```
