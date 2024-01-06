@@ -1,3 +1,8 @@
+# Resources 
+- https://www.techiedelight.com/weighted-interval-scheduling-problem For interval scheduling problems, weighted and unweighted.
+************************
+
+Rant dated Dec 2023 (Not to be taken seriously)
 It's hard to express how much I hate dynamic programming, especially that notation ```dp```. I can't call it garbage, because it solves so many problems. It just takes time to adopt it.
 
 _To understand dynamic programming, you'll require dynamic programming._
