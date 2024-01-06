@@ -42,3 +42,14 @@
         DENSE_RANK() OVER (ORDER BY salary DESC) AS salary_rank
     FROM Employee
     ```
+- To use a temporary table created by you, use WITH method
+  ```
+  WITH my_table_alias AS (
+      SELECT 
+        *, 
+        DENSE_RANK() OVER (PARTITION BY departmentId ORDER BY salary DESC) AS salary_rank
+    FROM Employee
+  )
+
+  SELECT * FROM my_table_alias
+  ```
