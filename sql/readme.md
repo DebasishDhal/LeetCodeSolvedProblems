@@ -25,3 +25,20 @@
   UNION
   (SELECT this AS result FROM that_table)
   ```
+
+- For producing a rank based on some column, with or without grouping, use this method: -
+  - ```df['salary_rank'] = df.groupby('name_dept')['salary'].rank(method='dense',ascending=False)``` #salary_rank is rank of each row within its own group (grouped by name_dept). You can remove the groupby ranking is needed on entire table. The dense method doesn't skip ranks when it comes across same row values for col = 'salary'.
+  - In SQL, it's done by Ranking and Partitioning.
+    ```
+    SELECT 
+        *, 
+        DENSE_RANK() OVER (PARTITION BY departmentId ORDER BY salary DESC) AS salary_rank
+    FROM Employee
+    ```
+    To rank the whole table without any grouping,
+    ```
+    SELECT 
+        *, 
+        DENSE_RANK() OVER (ORDER BY salary DESC) AS salary_rank
+    FROM Employee
+    ```
