@@ -32,3 +32,15 @@ class Solution:
 s = Solution()
 
 print(s.numberOfArithmeticSlices([2,4,6,8,10]))
+
+# i=1, j=0, elm_i=4, elm_j=2, diff=2, prevCount=0, dp=[{}, {2: 1}, {}, {}, {}]
+# i=2, j=0, elm_i=6, elm_j=2, diff=4, prevCount=0, dp=[{}, {2: 1}, {4: 1}, {}, {}]
+# i=2, j=1, elm_i=6, elm_j=4, diff=2, prevCount=1, dp=[{}, {2: 1}, {4: 1, 2: 2}, {}, {}]
+# i=3, j=0, elm_i=8, elm_j=2, diff=6, prevCount=0, dp=[{}, {2: 1}, {4: 1, 2: 2}, {6: 1}, {}]
+# i=3, j=1, elm_i=8, elm_j=4, diff=4, prevCount=0, dp=[{}, {2: 1}, {4: 1, 2: 2}, {6: 1, 4: 1}, {}]
+# i=3, j=2, elm_i=8, elm_j=6, diff=2, prevCount=2, dp=[{}, {2: 1}, {4: 1, 2: 2}, {6: 1, 4: 1, 2: 3}, {}]
+# i=4, j=0, elm_i=10, elm_j=2, diff=8, prevCount=0, dp=[{}, {2: 1}, {4: 1, 2: 2}, {6: 1, 4: 1, 2: 3}, {8: 1}]
+# i=4, j=1, elm_i=10, elm_j=4, diff=6, prevCount=0, dp=[{}, {2: 1}, {4: 1, 2: 2}, {6: 1, 4: 1, 2: 3}, {8: 1, 6: 1}]
+# i=4, j=2, elm_i=10, elm_j=6, diff=4, prevCount=1, dp=[{}, {2: 1}, {4: 1, 2: 2}, {6: 1, 4: 1, 2: 3}, {8: 1, 6: 1, 4: 2}]
+# i=4, j=3, elm_i=10, elm_j=8, diff=2, prevCount=3, dp=[{}, {2: 1}, {4: 1, 2: 2}, {6: 1, 4: 1, 2: 3}, {8: 1, 6: 1, 4: 2, 2: 4}]
+#Take the last line, it imples that there is 1 subsequence with diff=1 ending at 5th(last) element i.e. 10, 4 subsequences with diff=2 ending at 10 [8,10],[6,8,10],[4,6,8,10],[2,4,6,8,10]
